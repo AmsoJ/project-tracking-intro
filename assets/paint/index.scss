@@ -1,0 +1,135 @@
+@import './color';
+
+@font-face {
+    font-family: bold;
+    src: url(./../fonts/BarlowSemiCondensed-Bold.ttf);
+}
+@font-face {
+    font-family: semi;
+    src: url(./../fonts/BarlowSemiCondensed-Medium.ttf);
+}
+@font-face {
+    font-family: regular;
+    src: url(./../fonts/BarlowSemiCondensed-Regular.ttf);
+}
+body {
+    // background-color: black;
+    min-height: 100vh;
+    overflow: hidden;
+    overflow-y:visible;
+    .overlay {
+        position: absolute;
+        width: 50%;
+        height: 50vh;
+        background-color: $Light-Grayish-Blue;
+        top: 0;
+        right: 0;
+        border-radius: 0 0 0 60px;
+        z-index: -1;
+    }
+}
+.master {
+    .compass {
+        a {
+            color: $Very-Dark-Blue;
+            font-family: bold;
+            &:hover {
+                color: $Grayish-Blue;
+                text-decoration: underline;
+            }
+        }
+        a[class*="login"] {
+            color: $Grayish-Blue;
+            &:hover {
+                color: $Very-Dark-Blue;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.wrapper {
+    min-height: 80vh;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    .wrapper-row .left-side {
+        padding-left: 120px;
+        .intro-text {
+            color: $Light-Grayish-Blue;
+            letter-spacing: 3px;
+            word-spacing: 5px;
+            font-family: semi;
+        }
+        .title {
+            font-family: bold;
+            color: $Very-Dark-Blue;
+            font-size: 4rem;
+        }
+        .planning {
+            color: $Grayish-Blue;
+            font-family: regular;
+            width: 60%;
+            font-size: 1.5rem;
+        }
+        .scheduler {
+            align-items: center;
+            button {
+                font-family: semi;
+                background-color: $Red;
+                &:hover {
+                    background-color: $Hover-Red;
+                }
+            }
+        }
+    }
+    .wrapper-row .right-side {
+        min-height: 300px;
+    }
+}
+
+@media screen  and (max-width: 600px){
+    .master {
+        .compass {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translate(-50%);
+            align-items: center;
+            flex-direction: column;
+            background-color: white;
+            box-shadow: 0 0 10px -5px $Dark-Grayish-Blue;
+            border-radius: 10px;
+            width: 80%;
+            display: none;
+            &.show-compass {
+                display: block;
+            }
+            a {
+                display: block;
+                margin: unset;
+            }
+        }
+    }
+    .wrapper .wrapper-row {
+        .left-side {
+            padding-left: 12px;
+            .title {
+                font-size: 3rem;
+            }
+            .planning {
+                width: 100%;
+            }
+        }
+        .right-side {
+            overflow: hidden;
+            svg {
+                // transform: scale(.8);
+                width: 100%;
+                height: 100%;
+                font-size: 30px;
+                // background-color: cadetblue;
+            }
+        }
+    }
+}
