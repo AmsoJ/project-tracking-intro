@@ -26,6 +26,9 @@ body .overlay {
   z-index: -1;
 }
 
+.master .compass {
+  margin-left: auto;
+}
 .master .compass a {
   color: hsl(230, 29%, 20%);
   font-family: bold;
@@ -47,9 +50,6 @@ body .overlay {
   display: flex;
   align-items: stretch;
   justify-content: center;
-}
-.wrapper .wrapper-row .left-side {
-  padding-left: 120px;
 }
 .wrapper .wrapper-row .left-side .intro-text {
   color: hsl(207, 33%, 95%);
@@ -112,12 +112,8 @@ body .overlay {
   .wrapper .wrapper-row .left-side .planning {
     width: 100%;
   }
-  .wrapper .wrapper-row .right-side {
-    overflow: hidden;
-  }
   .wrapper .wrapper-row .right-side svg {
     width: 100%;
-    height: 100%;
     font-size: 30px;
   }
 }
